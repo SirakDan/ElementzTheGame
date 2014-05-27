@@ -4,6 +4,7 @@ using System.Collections;
 public class HUD : MonoBehaviour {
 
 	public string resolution = "Develop";
+	public int OrderInLayerPS = 99;
 
 	private SpriteRenderer manaBar;
 	private Vector3 manaScale;
@@ -14,6 +15,8 @@ public class HUD : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		GameObject.Find ("Selector").renderer.sortingOrder = OrderInLayerPS;
+		GameObject.Find ("Efecto_mana_bar").renderer.sortingOrder = OrderInLayerPS;
 		ResolutionHUD (resolution);
 		miAzul =  new Color (0f, 0.2f, 1f, 1f);
 		manaBar = GameObject.Find("mana_bar").GetComponent<SpriteRenderer>();
