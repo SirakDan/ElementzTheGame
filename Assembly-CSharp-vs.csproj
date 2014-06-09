@@ -54,11 +54,13 @@
      <Compile Include="Assets\Scripts\Blow.cs" />
      <Compile Include="Assets\Scripts\Bound.cs" />
      <Compile Include="Assets\Scripts\Button.cs" />
+     <Compile Include="Assets\Scripts\CloudSpawner.cs" />
      <Compile Include="Assets\Scripts\Credits.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
      <Compile Include="Assets\Scripts\End.cs" />
      <Compile Include="Assets\Scripts\FireBall.cs" />
      <Compile Include="Assets\Scripts\Fuego.cs" />
+     <Compile Include="Assets\Scripts\Girar.cs" />
      <Compile Include="Assets\Scripts\HUD.cs" />
      <Compile Include="Assets\Scripts\IABasic.cs" />
      <Compile Include="Assets\Scripts\Ice.cs" />
