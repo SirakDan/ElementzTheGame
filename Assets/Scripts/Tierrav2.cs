@@ -130,7 +130,7 @@ public class Tierrav2 : MonoBehaviour {
 				break;
 			case "BrokenStone": 
 
-				if (player.Status == player.Properties.STONE) {
+				if (player.Status == player.Properties.STONE && player.mana < CostMana/2) {
 					if(Input.GetMouseButtonDown(1) && mouse.OnMouseOver(gameObject)){
 						float distance = Mathf.Sqrt( Mathf.Pow(transform.position.x - go.transform.position.x, 2) + Mathf.Pow(transform.position.y - go.transform.position.y, 2));
 						if(distance <= distanciaRomper){

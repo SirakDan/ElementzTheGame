@@ -10,6 +10,7 @@ public class World : MonoBehaviour {
 	private GameObject Nika;
 	private Player player;
 	private GameObject bodyPlayer;
+	private AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,10 @@ public class World : MonoBehaviour {
 		bodyPlayer = GameObject.Find("Character");
 		mouse.lockCursor();
 		Time.timeScale = 1;
+		GameObject goAudio = GameObject.Find ("Audio");
+		if (goAudio != null) {
+			audio = goAudio.GetComponent<AudioSource> ();
+		}
 	}
 
 	// Update is called once per frame
@@ -33,6 +38,7 @@ public class World : MonoBehaviour {
 
 	void OnGUI() {
 		if (paused){ // MENU DE PAUSA
+			if (audio != null) { audio.Pause(); }
 			string pauseMsg = "Game paused";
 
 			//Tamaño de la Celda
@@ -52,6 +58,7 @@ public class World : MonoBehaviour {
 					paused = false;
 					Time.timeScale = 1; 
 					mouse.lockCursor();
+					if (audio != null) { audio.Play(); }
 				}
 			}
 
@@ -61,6 +68,7 @@ public class World : MonoBehaviour {
 			                       TamCX, TamCY), "Back To MainTitle")) {
 				player.Death = false;
 				Time.timeScale = 1;
+				if (audio != null) { audio.Stop(); }
 				Application.LoadLevel("MainTitle");
 			}
 
